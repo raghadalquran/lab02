@@ -23,7 +23,7 @@ $(document).ready(function(){
       imageFilter.append(`<option>${this.keyword}</option>`);}
   };
   const pageJson = () => {
-    $.ajax('../data/page-1.json', { method: 'GET' ,dataType: 'JSON'}).then(page1 => {
+    $.ajax('data/page-1.json', { method: 'GET' ,dataType: 'JSON'}).then(page1 => {
       page1.forEach(function(value){
         let gallery = new Gallery(value.image_url,value.title,value.description,value.keyword,value.horns);
         gallery.filter();
@@ -33,8 +33,6 @@ $(document).ready(function(){
   };
   pageJson();
 });
-
-
 $('.select-class').change(function(){
   var selected = $(this).children('option:selected').val();
   arrayToPush.forEach(function(val){
@@ -42,5 +40,6 @@ $('.select-class').change(function(){
       $('section').hide();
       $(`.${val}`).show();
     }
+
   });
 });
