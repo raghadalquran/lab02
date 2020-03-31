@@ -1,3 +1,4 @@
+'use strict';
 let arrayToPush=[];
 $(document).ready(function(){
   function Gallery(image_url,title,description,keyword,horns){
